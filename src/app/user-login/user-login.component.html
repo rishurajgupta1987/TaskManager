@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="parentDivImage">
+      <div style="margin-top: 60px;"><img src="../../assets/images/greaterThanIconWhite.png"></div>
+      <div class="parentDiv">
+        <div class="loginScreen">
+          <div align="center" style="margin-top: 20px;font-size: 30px;"><i style="color: white;" class="fa fa-user-circle-o fa-5x" aria-hidden="true"></i></div>
+          <div class="loginHeading" align="center">Task Manager Login</div>
+
+          <form [formGroup]="loginForm" (ngSubmit)="validateUser()" novalidate>
+            <div class="form-group has-feedback">
+              <input type="text" class="form-control" id="uname" style="margin-top: 20px;" formControlName="enterpriseID" placeholder="Enterprise ID [ex: rishu.gupta]">
+              <i *ngIf="loginForm.valid" class="fa fa-check-circle fa-2x form-control-feedback" style="color: green;padding-top: 2px;"
+                aria-hidden="true"></i>
+              <div *ngIf="loginForm.controls['enterpriseID'].hasError('pattern')" class="alert alert-danger">
+                <i class="fa fa-times-circle" style="color: red;" aria-hidden="true"></i> Input Allows Only Alphabets and
+                Periods(.)
+              </div>
+              <div *ngIf="showMsg" class="alert alert-danger">
+                <i class="fa fa-times-circle" style="color: red;" aria-hidden="true"></i> User does not Exist!
+              </div>
+              <div *ngIf="showServiceNotWokring" class="alert alert-danger">
+                <i class="fa fa-times-circle" style="color: red;" aria-hidden="true"></i> App Service is disconnected.
+              </div>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox"> Remember me</label>
+            </div>
+            <button type="submit" [disabled]="loginForm.invalid" class="btn btn-default pull-right">Submit</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

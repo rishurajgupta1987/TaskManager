@@ -1,0 +1,96 @@
+div .loginScreen{
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+    width: 300px;
+    height: 450px;
+    border: 0.5px solid #ffffff;
+    padding: 20px;
+    background-color: #0C1712;
+    color: #ffffff;
+    border-radius: 5px;
+    opacity: 0.8;
+}
+
+.btn-default{
+    font-weight: bold;
+}
+
+input .ng-valid {
+    border-left: 3px solid green;
+}
+input .ng-invalid {
+    border-left: 3px solid red;
+}
+
+
+div .parentDiv{
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 20%;
+    position: absolute;
+    width: 350px;
+    height: 500px;
+    border: 0.5px solid #ffffff;
+    padding: 20px;
+    /*background-image: url('../../assets/images/Accenture_Logo_trans.png');*/
+    color: #ffffff;
+    border-radius: 5px;
+
+}
+
+@media only screen and (max-width: 500px) {
+    div .parentDiv{
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        position: absolute;
+        width: 350px;
+        height: 500px;
+        border: 0.5px solid #ffffff;
+        padding: 20px;
+        /*background-image: url('../../assets/images/Accenture_Logo_trans.png');*/
+        color: #ffffff;
+        border-radius: 5px;
+
+    }
+}
+
+div .parentDivImage{
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+    border: 0.5px solid #ffffff;
+    padding: 20px;
+    background-image: url('../../assets/images/login_screen_background.jpg');
+    color: #ffffff;
+    border-radius: 5px;
+
+}
+
+
+
+.form-control{
+	font-size: 14px;
+	border-left: 3px solid #ff0000;
+}
+
+.loginHeading{
+    font-size: 25px;
+    font-family: sans-serif;
+    font-weight: 100;
+    margin-top: 20px;
+}

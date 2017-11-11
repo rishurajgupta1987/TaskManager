@@ -1,0 +1,53 @@
+
+<div class="searchMainContainer">
+  <div class="searchSubContainer" align="center">
+    <form [formGroup]="searchRequestForm" novalidate>
+      <div class="form-group">
+        <input type="text" class="form-control" formControlName="taskName" placeholder="Task Name">
+        
+        <!--<div *ngIf="createTaskRequestForm.controls['taskName'].hasError('required') && !createTaskRequestForm.controls['taskName'].pristine" class="alert alert-danger">
+          <i class="fa fa-times-circle" style="color: red;" aria-hidden="true"></i> Task Name is Required!
+        </div>
+        
+        <div *ngIf="createTaskRequestForm.controls['taskName'].hasError('pattern')" class="alert alert-danger">
+          <i class="fa fa-times-circle" style="color: red;" aria-hidden="true"></i> Task Name Accepts Alphabets Only!
+        </div>-->
+      </div>
+      
+      <div class="form-group">
+          <input type="text" class="form-control" formControlName="enterpriseID" placeholder="EnterpriseID" *ngIf="advanceSearchEnabled">
+      </div>  
+      
+      <div class="form-group">
+        <select class="form-control" formControlName="taskStatus" *ngIf="advanceSearchEnabled" pTooltip="Task Status" tooltipPosition="top" tooltipEvent="hover">
+          <option value="open">Open</option>
+          <option value="completed">Completed</option>
+          <option value="cancelled">Cancelled</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+          <select class="form-control" formControlName="assignedStatus" *ngIf="advanceSearchEnabled" pTooltip="Assigned Status" tooltipPosition="top" tooltipEvent="hover">
+            <option value="assignBy">Assign BY</option>
+            <option value="assignTo">Assign TO</option>
+          </select>
+      </div>
+    
+      <div class="form-group">
+          <p-calendar formControlName="startDate" *ngIf="advanceSearchEnabled" [inputStyle]='{"margin-left":"-23px","width":"580px","height":"35px"}'
+            placeholder="Start Date" [showIcon]="true">
+          </p-calendar>
+      </div>
+      <div class="form-group">
+          <p-calendar formControlName="endDate" *ngIf="advanceSearchEnabled" [inputStyle]='{"margin-left":"-23px","width":"580px","height":"35px"}'
+            placeholder="End Date" [showIcon]="true"></p-calendar>
+      </div>
+
+      <div class="form-group">
+        <i class="advanceSearchIcon" pTooltip="Advance Search Filters" tooltipPosition="top" tooltipEvent="hover" (click)="callAdvanceFilters()">Advance Search Filters</i>  
+        <button type="submit" class="btn btn-success btn-md" 
+          [disabled]='!searchRequestForm.controls["taskName"].valid'>Search</button>
+        </div>
+    </form>
+  </div>
+</div>

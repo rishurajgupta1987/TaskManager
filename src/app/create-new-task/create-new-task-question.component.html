@@ -1,0 +1,14 @@
+<div class="createNewQuestionContainer">
+    <div class="form-group" style="display: inline;">
+      <label class="createNewQuestionLabel">What Type Of Task You Would Like To Create?</label>
+      <select class="form-control" [(ngModel)]= "createRequestPage">
+				<option value="teamTask">Create a Team Task</option>
+				<option value="multipleTask">Create a Generic Task for Multiple People</option>
+      </select>
+      <div class="info-Div" *ngIf="createRequestPage == 'teamTask'"><i class="fa fa-info-circle"></i>  Info: This task can be completed by anyone in the list. </div>
+      <div class="info-Div" *ngIf="createRequestPage == 'multipleTask'"><i class="fa fa-info-circle"></i>  Info: This task has to be completed by everyone in the list.</div>
+    </div>
+    <div class="form-group">
+      <button type="button" class="btn btn-success pull-right" data-dismiss="modal" (click)= "openCreateTaskWindow()">Submit</button>
+    </div>
+</div>

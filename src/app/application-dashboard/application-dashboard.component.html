@@ -1,0 +1,102 @@
+<div class="row">
+    <div class="col-sm-3 col-md-3 col-lg-3 applicationButton" [class.applicationButton-Active]="toYouActive" (click)='viewDashboard("TO YOU")'
+        align="center">ASSIGNED TO YOU</div>
+    <div class="col-sm-3 col-md-3 col-lg-3 applicationButton" [class.applicationButton-Active]="byYouActive" (click)='viewDashboard("BY YOU")'
+        align="center">ASSIGNED BY YOU</div>
+</div>
+<div class="row">
+    <div *ngIf="toYouActive">
+        <ul class="list-inline">
+            <li class="list-inline-item" *ngFor="let task of assignedToYouData">
+                <div class="taskPostCard" (click)="openTaskModel(task.taskID)">
+                    <div class="taskPostCardTitle"><i class="fa fa-tag" aria-hidden="true"></i> {{task.taskTitle}}</div>
+                    <div class="taskPostCardCompletionData">Target Date: {{task.taskTargetDateTime}}</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div *ngIf="byYouActive">
+        <ul class="list-inline">
+            <li class="list-inline-item" *ngFor="let task of assignedByYouData">
+                <div class="taskPostCard" (click)="openTaskModel()">
+                    <div class="taskPostCardTitle"><i class="fa fa-tag" aria-hidden="true"></i> {{task.taskTitle}}</div>
+                    <div class="taskPostCardCompletionData">Target Date: {{task.taskTargetDateTime}}</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+<!--Each Task Model Starts from Here-->
+<p-dialog header="About Task" [(visible)]="showModel" modal="modal" width="1000" height="800" [responsive]="true">
+    <form [formGroup]="viewEditTaskForm" novalidate>
+        <div class="form-group">
+            <label class="subHeading">Task Name:</label>
+            <input type="text" class="form-control" formControlName="taskName" placeholder="Task Name">
+        </div>
+        <div class="form-group">
+            <label class="subHeading">Assign To:</label>
+            <p-multiSelect [options]="users" formControlName="selectUsers" 
+                maxSelectedLabels="5" [style]='{"width":"100%","padding-left":"3px"}'></p-multiSelect>
+        </div>
+        <div class="form-group">
+            <label class="subHeading">Target Date:</label>
+            <p-calendar formControlName="targetDate" [style]='{"width":"100%"}' [inputStyle]='{"width":"96%","height":"35px"}' 
+                placeholder="Target Date/Time" [showIcon]="true"></p-calendar>
+        </div>
+        <div class="form-group">
+            <label class="subHeading">Attachments:</label>
+            <input type="file" formControlName="taskAttachments" class="assignmentsWindow" multiple>
+            <div class="attachedFileDiv">Attached Files:
+                <span class="attachedFile" (click)="downloadAttachment(uploadedFile.attachmentID)" *ngFor="let uploadedFile of uploadedFiles">
+                    <i class="fa fa-paperclip"></i> {{uploadedFile.attachmentName}}
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="subHeading">Priority:</label>
+            <select class="form-control" formControlName="priority">
+                <option Value="low">P4 -- Low</option>
+                <option Value="medium" selected>P3 -- Medium</option>
+                <option Value="high">P2 -- High</option>
+                <option  Value="urgent">P1 -- Urgent</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="subHeading">Status:</label>
+            <select class="form-control" formControlName="taskStatus">
+                <option value="open">Open</option>
+                <option value="completed">Completed</option>
+                <option value="cancelled">Cancelled</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="subHeading">Description:</label>
+            <input type="text" class="form-control" formControlName="aboutTask">
+        </div>
+    </form>
+
+    <div class="subHeading">Sub Tasks</div>
+    <!--<div *ngIf="!subtaskFlag">No Subtasks Available.</div>-->
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="subHeading">Assigned User</th>
+                <th class="subHeading">Task Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let subTask of subtasks">
+                <td>{{subTask.userID}}</td>
+                <td>{{subTask.status}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p-footer>
+        <button type="button" pButton icon="fa-check" [disabled]="!viewEditTaskForm.valid" (click)="updateTask()" label="Update"></button>
+        <button type="button" pButton icon="fa-edit" label="Edit" (click) = "editTask()"></button>
+    </p-footer>
+</p-dialog>

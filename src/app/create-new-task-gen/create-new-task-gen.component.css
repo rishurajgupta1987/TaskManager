@@ -1,0 +1,66 @@
+.createNewQuestionLabel{
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.createNewRequestContainer{
+padding: 30px;
+ 
+}
+
+.createTaskButton{
+margin-left: 10px;
+}
+
+.backtoselection{
+margin: 10px 10px 10px 30px;
+color: #ffffff;
+width: 100%;
+cursor: pointer;
+width: 500px;
+}
+
+.valid-icon{
+color: green;
+padding-top: 10px;
+
+}
+
+/*Angular Reactive Foam Validations*/
+input.ng-invalid{
+border-left: 5px solid red;
+}
+input.ng-valid{
+border-left: 5px solid green;
+}
+
+select.ng-invalid{
+border-left: 5px solid red;
+}
+select.ng-valid{
+border-left: 5px solid green;
+}
+
+textarea.ng-invalid{
+border-left: 5px solid red;
+}
+textarea.ng-valid{
+border-left: 5px solid green;
+}
+
+.assignmentsWindow{
+    width: 100%;
+    background-color: #ffffff;
+    height: 33px;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.taskHeading{
+    vertical-align: super;
+    padding-left: 20px;
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: 200;
+}

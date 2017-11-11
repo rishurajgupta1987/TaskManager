@@ -1,0 +1,96 @@
+.createNewQuestionLabel{
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: 100;
+}
+
+.createNewRequestContainer{
+    padding: 30px;
+     
+}
+
+.createTaskButton{
+    margin-left: 10px;
+}
+
+.backtoselection{
+    margin: 10px 10px 10px 30px;
+    color: #ffffff;
+    width: 100%;
+    width: 200px;
+}
+
+.valid-icon{
+    color: green;
+    padding-top: 10px;
+
+}
+
+/*Angular Reactive Foam Validations*/
+input.ng-invalid{
+    border-left: 5px solid red;
+}
+input.ng-valid{
+    border-left: 5px solid green;
+}
+
+select.ng-invalid{
+    border-left: 5px solid red;
+}
+select.ng-valid{
+    border-left: 5px solid green;
+}
+
+/*p-multiselect.ng-invalid{
+    border-left: 5px solid red;
+}
+
+p-multiselect.ng-valid{
+    border-left: 5px solid green;
+}
+
+p-calendar.ng-invalid{
+    border-bottom: 1px solid red;
+}
+
+p-calendar.ng-valid{
+    border-bottom: 1px solid green;
+}*/
+
+textarea.ng-invalid{
+    border-left: 5px solid red;
+}
+textarea.ng-valid{
+    border-left: 5px solid green;
+}
+
+.assignmentsWindow{
+    width: 100%;
+    background-color: #ffffff;
+    height: 33px;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.taskHeading{
+    vertical-align: super;
+    padding-left: 20px;
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: 200;
+}
+
+.attachmentFormatting{
+    color: #ffffff;
+}
+
+.successDiv{
+    border-left: 31px solid #3c763d !important;
+    border-radius: 0px;
+    border: 1px solid #3c763d;
+    height: 100px;
+    width: 500px;
+    font-size: 25px;
+    padding-top: 13px;
+    margin-left: 10px;
+}

@@ -1,0 +1,22 @@
+.createNewQuestionContainer{
+    width: 600px;
+    height: 400px;
+    margin-left: 30px;
+     
+}
+
+.createNewQuestionLabel{
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: 100;
+ 
+}
+
+.info-Div{
+    color: #ffffff;
+    margin: 10px 0px 10px 0px;
+    padding: 10px 50px 10px 20px;
+    border: 1px solid #ffffff;
+    font-size: 15px;
+    font-weight: 100;
+}

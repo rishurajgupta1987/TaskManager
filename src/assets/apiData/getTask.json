@@ -1,0 +1,35 @@
+{
+    "taskID": "test1",
+    "taskType": "team",
+    "taskTitle": "Complete Clarity",
+    "assignTo": [
+        "rishu.gupta",
+        "paresh.rai"
+    ],
+    "attachments": [
+        {
+            "attachmentID": "ID123",
+            "attachmentName": "test1.txt"
+        },
+        {
+            "attachmentID": "ID1234",
+            "attachmentName": "test2.pdf"
+        }
+    ],
+    "subTasks": [
+        {
+            "subTaskID": "subID1",
+            "userID": "rishu.gupta",
+            "status": "open"
+        },
+        {
+            "subTaskID": "subID2",
+            "userID": "paresh.rai",
+            "status": "cancelled"
+        }
+    ],
+    "targetCompletionDate": "08/22/2017 03:30 PM",
+    "priority": "high",
+    "status": "open",
+    "description": "testing task"
+}
